@@ -1,8 +1,9 @@
+"use strict";
 var a = 1 + 2;
 var b = a + 3;
 var c = {
     apple: a,
-    banaba: b
+    banaba: b,
 };
 var hasValue = true;
 var count = 1;
@@ -12,9 +13,9 @@ var string = '';
 var person = {
     name: {
         first: 'jack',
-        last: 'bob'
+        last: 'bob',
     },
-    age: 21
+    age: 21,
 };
 //array
 var fruits = ['appple', 'banana', 'grape', 1];
@@ -28,7 +29,7 @@ var CoffeeSize;
 })(CoffeeSize || (CoffeeSize = {}));
 var coffee = {
     bot: true,
-    size: CoffeeSize.TALL
+    size: CoffeeSize.TALL,
 };
 //any
 var anything = true;
