@@ -1,4 +1,9 @@
 class Human {
+  static species = 'Homo Sapience';
+  static isAdult = (age: number) => {
+    if (age >= 18) return true;
+    return false;
+  };
   constructor(readonly name: string, protected age: number) {}
 
   incrementAge = () => {
@@ -13,13 +18,21 @@ const david = new Human('david', 38);
 david.greeting();
 
 class Driver extends Human {
-  constructor(name: string, age: number, public carKind: string) {
+  get carKind() {
+    return 'prius';
+  }
+
+  set carKind(value) {
+    this.carKind = value;
+  }
+
+  constructor(name: string, age: number, private _carKind: string) {
     super(name, age);
   }
 
   greeting = () => {
     console.log(
-      `Hello! my name is ${this.name}!! i am ${this.age} years old. i drived ${this.carKind}`,
+      `Hello! my name is ${this.name}!! i am ${this.age} years old. i drived ${this._carKind}`,
     );
   };
 }

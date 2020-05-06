@@ -1,58 +1,60 @@
 "use strict";
-var _a, _b, _c;
+// type Engineer = {
+//   name: string;
+//   role: string;
+// };
+var _a;
 const quill = {
     name: 'quill',
-    role: 'front-end',
+    role: 'front',
     follower: 1000,
 };
-const describeNomadWorkerProfile = (nomadWorker) => {
-    console.log(nomadWorker.name);
-    if ('role' in nomadWorker) {
-        nomadWorker.role;
+function toLocaleLowerCase(x) {
+    if (typeof x === 'string') {
+        return x.toLocaleUpperCase();
     }
-    if ('follower' in nomadWorker) {
-        console.log(nomadWorker.follower);
+    return x;
+}
+const upperHello = toLocaleLowerCase('hello');
+const upperHello2 = toLocaleLowerCase(1);
+const describeNomadWorkerProfile = (nomadWorker) => {
+    if ('role' in nomadWorker) {
+        console.log(nomadWorker.role);
     }
 };
 class Dog {
     constructor() {
-        this.speak = () => {
-            console.log('bow-bow');
-        };
+        this.kind = 'dog';
+        this.speak = () => { };
     }
 }
 class Bird {
     constructor() {
-        this.speak = () => {
-            console.log('tyun-tyun');
-        };
-        this.fly = () => {
-            console.log('flutter');
-        };
+        this.kind = 'bird';
+        this.speak = () => { };
+        this.fly = () => { };
     }
 }
 const havePet = (pet) => {
     if (pet instanceof Bird) {
-        pet.fly();
+        return pet.fly();
     }
+    return pet.speak();
 };
-havePet(new Bird());
 const input = document.getElementById('input');
-const Desiger = {
-    name: 'quill',
+const input2 = document.getElementById('input');
+const input3 = document.getElementById('input');
+const designer = {
+    name: 'david',
+    role: 'aaa',
 };
 const downloadedData = {
     id: 1,
 };
-console.log((_b = (_a = downloadedData.user) === null || _a === void 0 ? void 0 : _a.name) === null || _b === void 0 ? void 0 : _b.first);
-const userData = (_c = downloadedData.user) !== null && _c !== void 0 ? _c : 'no-user';
-var Color;
-(function (Color) {
-    Color[Color["RED"] = 0] = "RED";
-    Color[Color["BLUE"] = 1] = "BLUE";
-})(Color || (Color = {}));
-let target = 'hello';
-let source = 'hello';
-target = source;
-function advancedFn(...args) { }
-advancedFn(1, 2, 3, 4, 5);
+const userDate = (_a = downloadedData.user) !== null && _a !== void 0 ? _a : 'no-user';
+const upperHello5 = function (x) {
+    return 0;
+};
+const advancedFn = (...args) => { };
+advancedFn(0, 'hi', true, 1, 1, 1);
+const a = [1, 2, 3];

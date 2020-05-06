@@ -11,15 +11,27 @@ class Human {
         };
     }
 }
+Human.species = 'Homo Sapience';
+Human.isAdult = (age) => {
+    if (age >= 18)
+        return true;
+    return false;
+};
 const david = new Human('david', 38);
 david.greeting();
 class Driver extends Human {
-    constructor(name, age, carKind) {
+    constructor(name, age, _carKind) {
         super(name, age);
-        this.carKind = carKind;
+        this._carKind = _carKind;
         this.greeting = () => {
-            console.log(`Hello! my name is ${this.name}!! i am ${this.age} years old. i drived ${this.carKind}`);
+            console.log(`Hello! my name is ${this.name}!! i am ${this.age} years old. i drived ${this._carKind}`);
         };
+    }
+    get carKind() {
+        return 'prius';
+    }
+    set carKind(value) {
+        this.carKind = value;
     }
 }
 const dirver = new Driver('quill', 38, 'prius');
