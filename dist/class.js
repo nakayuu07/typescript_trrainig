@@ -32,3 +32,13 @@
 //   }
 // }
 // const teacher = new Teacher('Quill', 38, 'math');
+class Ningen {
+    constructor(initName) {
+        this.greeeeeeeeeting = () => {
+            console.log(`hello ${this.name}`);
+        };
+        this.name = initName;
+    }
+}
+const abc = new Ningen('quill');
+console.log(abc.greeeeeeeeeting());

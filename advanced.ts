@@ -108,6 +108,109 @@
 // function advancedFn(...args: number[]) {}
 
 // advancedFn(1, 2, 3, 4, 5);
+// type Engineer = {
+//   name: string;
+//   role: string;
+// };
+
+// type Blogger = {
+//   name: string;
+//   follower: number;
+// };
+
+// type EngineerBlogger = Engineer & Blogger;
+// interface EngineerBlogger extends Engineer, Blogger {}
+// const quill: EngineerBlogger = {
+//   name: 'quill',
+//   role: 'front',
+//   follower: 1000,
+// };
+
+// function toLocaleLowerCase(x: string): string;
+// function toLocaleLowerCase(x: number): number;
+// function toLocaleLowerCase(x: string | number) {
+//   if (typeof x === 'string') {
+//     return x.toLocaleUpperCase();
+//   }
+//   return x;
+// }
+
+// const upperHello = toLocaleLowerCase('hello');
+// const upperHello2 = toLocaleLowerCase(1);
+
+// type NomadWorker = Engineer | Blogger;
+// const describeNomadWorkerProfile = (nomadWorker: NomadWorker) => {
+//   if ('role' in nomadWorker) {
+//     console.log(nomadWorker.role);
+//   }
+// };
+
+// class Dog {
+//   kind: 'dog' = 'dog';
+//   speak = () => {};
+// }
+
+// class Bird {
+//   kind: 'bird' = 'bird';
+//   speak = () => {};
+
+//   fly = () => {};
+// }
+
+// type Pet = Dog | Bird;
+// const havePet = (pet: Pet) => {
+//   if (pet instanceof Bird) {
+//     return pet.fly();
+//   }
+//   return pet.speak();
+// };
+
+// const input = <HTMLInputElement>document.getElementById('input');
+// const input2 = document.getElementById('input') as HTMLInputElement;
+// const input3 = document.getElementById('input')!;
+
+// interface Designer {
+//   name: string;
+//   [index: string]: string;
+// }
+
+// const designer: Designer = {
+//   name: 'david',
+//   role: 'aaa',
+// };
+
+// interface DownloadedData {
+//   id: number;
+//   user?: {
+//     name?: {
+//       first: string;
+//       last: string;
+//     };
+//   };
+// }
+
+// const downloadedData: DownloadedData = {
+//   id: 1,
+// };
+
+// const userDate = downloadedData.user ?? 'no-user';
+// type id = DownloadedData['id'];
+
+// interface tmpFunc {
+//   (x: string): number;
+//   (x: number): number;
+// }
+
+// const upperHello5: tmpFunc = function (x: string | number) {
+//   return 0;
+// };
+
+// const advancedFn = (...args: [number, string, boolean, ...number[]]) => {};
+
+// advancedFn(0, 'hi', true, 1, 1, 1);
+
+// const a: number[] = [1, 2, 3];
+
 type Engineer = {
   name: string;
   role: string;
@@ -118,68 +221,57 @@ type Blogger = {
   follower: number;
 };
 
-// type EngineerBlogger = Engineer & Blogger;
-interface EngineerBlogger extends Engineer, Blogger {}
+type EngineerBlogger = Engineer & Blogger;
 const quill: EngineerBlogger = {
   name: 'quill',
-  role: 'front',
+  role: 'front-end',
   follower: 1000,
 };
 
-function toLocaleLowerCase(x: string): string;
-function toLocaleLowerCase(x: number): number;
-function toLocaleLowerCase(x: string | number) {
-  if (typeof x === 'string') {
-    return x.toLocaleUpperCase();
-  }
-  return x;
-}
+type NumberBoolean = number | boolean;
+type StringNumber = number | string;
+type mix = NumberBoolean & StringNumber;
 
-const upperHello = toLocaleLowerCase('hello');
-const upperHello2 = toLocaleLowerCase(1);
+const toUpperCase = (value: string | number) => {
+  if (typeof value === 'string') {
+    value.toLocaleUpperCase;
+  }
+  return value;
+};
+const as = toUpperCase('hello');
 
 type NomadWorker = Engineer | Blogger;
-const describeNomadWorkerProfile = (nomadWorker: NomadWorker) => {
+const describeProfile = (nomadWorker: NomadWorker) => {
   if ('role' in nomadWorker) {
     console.log(nomadWorker.role);
   }
 };
 
-class Dog {
-  kind: 'dog' = 'dog';
-  speak = () => {};
-}
+// const input = document.getElementById('input')!;
 
-class Bird {
-  kind: 'bird' = 'bird';
-  speak = () => {};
-
-  fly = () => {};
-}
-
-type Pet = Dog | Bird;
-const havePet = (pet: Pet) => {
-  if (pet instanceof Bird) {
-    return pet.fly();
-  }
-  return pet.speak();
-};
-
-const input = <HTMLInputElement>document.getElementById('input');
-const input2 = document.getElementById('input') as HTMLInputElement;
-const input3 = document.getElementById('input')!;
-
-interface Designer {
+interface Desiger {
   name: string;
-  [index: string]: string;
+  [string: string]: string;
 }
 
-const designer: Designer = {
-  name: 'david',
-  role: 'aaa',
+const designer: Desiger = {
+  name: 'taro',
+  role: 'web',
+};
+interface TempFunc {
+  (x: string): number;
+  (x: number): number;
+}
+
+const upperHello: TempFunc = function (x: number | string) {
+  return 0;
 };
 
-interface DownloadedData {
+interface FuncA {
+  (a: number, b: number): number;
+  (a: string, b: number): number;
+}
+interface DownLoadedData {
   id: number;
   user?: {
     name?: {
@@ -189,24 +281,24 @@ interface DownloadedData {
   };
 }
 
-const downloadedData: DownloadedData = {
+const downloadedData: DownLoadedData = {
   id: 1,
 };
 
-const userDate = downloadedData.user ?? 'no-user';
-type id = DownloadedData['id'];
+console.log(downloadedData.user?.name?.first);
 
-interface tmpFunc {
-  (x: string): number;
-  (x: number): number;
-}
+const userdata = downloadedData.user ?? 'tom';
+type id = DownLoadedData['id' | 'user'];
 
-const upperHello5: tmpFunc = function (x: string | number) {
-  return 0;
-};
+const advanced = (...args: readonly number[]) => {};
 
-const advancedFn = (...args: [number, string, boolean, ...number[]]) => {};
+let milk = 'milk' as const;
+let drink = milk;
 
-advancedFn(0, 'hi', true, 1, 1, 1);
+const array2 = [1, 2] as const;
+const peter = {
+  name: 'Peter',
+  age: 38,
+} as const;
 
-const a: number[] = [1, 2, 3];
+type PeterType = typeof peter;

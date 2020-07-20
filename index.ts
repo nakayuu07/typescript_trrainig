@@ -1,23 +1,23 @@
-// // let a = 1 + 2;
-// // let b = a + 3;
-// // let c = {
-// //   apple: a,
-// //   banaba: b,
-// // };
+// let a = 1 + 2;
+// let b = a + 3;
+// let c = {
+//   apple: a,
+//   banaba: b,
+// };
 
-// // let hasValue: boolean = true;
-// // let count: number = 1;
-// // let float: number = 3.14;
-// // let negative: number = -1;
-// // let string: string = '';
+// let hasValue: boolean = true;
+// let count: number = 1;
+// let float: number = 3.14;
+// let negative: number = -1;
+// let string: string = '';
 
-// // const person = {
-// //   name: {
-// //     first: 'jack',
-// //     last: 'bob',
-// //   },
-// //   age: 21,
-// // };
+// const person = {
+//   name: {
+//     first: 'jack',
+//     last: 'bob',
+//   },
+//   age: 21,
+// };
 
 // // //array
 // // const fruits = ['appple', 'banana', 'grape', 1];
@@ -150,3 +150,117 @@
 // };
 
 // let ddd: boolean = false;
+
+// const c = {
+//   name: 'aaa',
+// };
+
+// let userA: {
+//   readonly firstName: string;
+// } = {
+//   firstName: 'aaa',
+// };
+// userA.firstName;
+
+// type Ningen = {
+//   name: string;
+//   age: number;
+// };
+
+const awe = 1;
+let fjg = awe;
+
+let plus = (num1: number, num2: number) => {
+  let sum = num1 + num2;
+  if (sum > 3) {
+    return `${sum}`;
+  }
+  return sum;
+};
+
+let array = [1, '2'];
+
+// type CoffeeSize = 'TALL' | 'SHORT' | 'GRANDE';
+
+// let buyCoffee: {
+//   price: number;
+//   coffeeSize: CoffeeSize;
+// } = {
+//   price: 1000,
+//   coffeeSize: 'SHORT',
+// };
+
+// interface User {
+//   name?: {
+//     first: string;
+//     last: string;
+//   };
+//   age: number;
+// }
+
+// let user10: User = {
+//   age: 18,
+// };
+
+// user10.name?.first;
+
+// interface Props {
+//   id: number;
+// }
+
+// let aaaa = 2.33;
+
+let hasValue: boolean = true;
+let count: number = 1;
+let single = 'Hello';
+
+const person: {
+  name: {
+    firstName: string;
+    lastName: string;
+  };
+  age: number;
+} = {
+  name: {
+    firstName: 'jack',
+    lastName: 'smith',
+  },
+  age: 21,
+};
+
+const fruits: (string | number)[] = ['banana', 'meron', 'grape'];
+
+const book: [string, number, boolean] = ['business', 1500, false];
+
+enum CoffeeSize {
+  SHORT = 'SHORT',
+  TALL = 'TALL',
+  GRANDE = 'GRANDE',
+  VENTI = 'VENTY',
+}
+
+const coffee = {
+  hot: true,
+  size: CoffeeSize.SHORT,
+};
+
+let unionType: number | string = 1;
+let unionTypes: (number | string)[] = [1, 2];
+
+const apple = 'apple';
+
+type ClothSize = 'small' | 'midium' | 'large';
+
+const add = (num: number, num2: number): number => {
+  return num + num2;
+};
+
+const sayHello = () => {
+  console.log('Hello');
+};
+
+const anotherAdd: (n1: number, n2: number) => number = add;
+
+let unKnowInput: unknown;
+let anyInput: any;
+let text: string;

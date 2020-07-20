@@ -77,13 +77,13 @@ var person = {
     name: 'string',
     age: 21
 };
-var fruits = ['aaa', 'aaaa', 'aaaa'];
-var book = ['aaa', 1, true];
+var fruits = [ 'aaa', 'aaaa', 'aaaa' ];
+var book = [ 'aaa', 1, true ];
 var Size;
 (function (Size) {
-    Size["SHORT"] = "SHORT";
-    Size["TALL"] = "TALL";
-    Size["GRANDE"] = "GRANDE";
+    Size[ "SHORT" ] = "SHORT";
+    Size[ "TALL" ] = "TALL";
+    Size[ "GRANDE" ] = "GRANDE";
 })(Size || (Size = {}));
 var a = 'a';
 var unionType = 10;
@@ -103,3 +103,5 @@ var doubleHandle = function (num) {
     return num * 2;
 };
 console.log(doubleNum(2, doubleHandle));
+
+
