@@ -144,4 +144,15 @@ const roles = [ '社長', '専務', '部長', '課長', '平社員' ]
 
 const sortRank = workers.sort((a, b) => roles.indexOf(a.role) - roles.indexOf(b.role))
 
-console.log(sortRank)
+// console.log(sortRank)
+
+const bottles = [ ...Array(101).keys() ].slice(1);
+
+const evenNumber = (numbers) => {
+  if (numbers % 2 === 0) return;
+};
+const freeBottles = bottles.filter((bottle) => bottle % 3 === 0);
+
+const totalBottles = bottles.length + freeBottles.length;
+
+console.log(totalBottles);
